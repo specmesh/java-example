@@ -16,7 +16,6 @@ docker-compose up -f docker/docker-compose.yml
 
 # run the provisioner
 mvn exec:java -Dexec.mainClass="io.specmesh.sampleMain"
-# 
 ```
 
 ### Testing / Deploying
