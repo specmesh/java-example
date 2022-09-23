@@ -15,7 +15,7 @@ public class APIParserTest {
         APISpec apiSpec = apiParser.loadResource(getClass().getClassLoader().getResourceAsStream("streetlights-simple-api.yaml"));
 
 //        APISpec apiSpec = apiParser.loadResource("streetlights-simple-api.yaml");
-        System.out.println("IDDDDD:" + apiSpec.getId());
+        System.out.println("IDDDDD:" + apiSpec.id());
         apiSpec.getChannels().forEach((k,v) -> {
             System.out.println("k: " + k);
             v.forEach((kk,vv) ->

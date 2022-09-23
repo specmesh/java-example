@@ -8,7 +8,7 @@ public class APISpec {
 
     private Map<String, Map<String, Operation>> channels;
 
-    public String getId() {
+    public String id() {
         return id;
     }
 
@@ -16,7 +16,7 @@ public class APISpec {
         return channels;
     }
 
-    public String getAsyncapi() {
+    public String asyncapi() {
         return asyncapi;
     }
 
