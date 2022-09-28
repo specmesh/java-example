@@ -1,11 +1,21 @@
 package io.specmesh.apiparser.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.Value;
+
 import java.util.Map;
 import java.util.Objects;
 
 /**
  * https://www.asyncapi.com/docs/reference/specification/v2.4.0#messageObject
  */
+@Value
+@NoArgsConstructor(force = true, access = AccessLevel.PRIVATE)
+@AllArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Message {
     private String messageId;
     private Map headers;
@@ -21,55 +31,55 @@ public class Message {
     private Map bindings;
     private Map traits;
 
-    public String getMessageId() {
+    public String messageId() {
         return messageId;
     }
 
-    public Map getHeaders() {
+    public Map headers() {
         return headers;
     }
 
-    public Map getPayload() {
+    public Map payload() {
         return payload;
     }
 
-    public Map getCorrelationId() {
+    public Map correlationId() {
         return correlationId;
     }
 
-    public String getSchemaFormat() {
+    public String schemaFormat() {
         return schemaFormat;
     }
 
-    public String getContentType() {
+    public String contentType() {
         return contentType;
     }
 
-    public String getName() {
+    public String name() {
         return name;
     }
 
-    public String getTitle() {
+    public String title() {
         return title;
     }
 
-    public String getSummary() {
+    public String summary() {
         return summary;
     }
 
-    public String getDescription() {
+    public String description() {
         return description;
     }
 
-    public Map getTags() {
+    public Map tags() {
         return tags;
     }
 
-    public Map getBindings() {
+    public Map bindings() {
         return bindings;
     }
 
-    public Map getTraits() {
+    public Map traits() {
         return traits;
     }
 
@@ -97,11 +107,11 @@ public class Message {
         if (this == o) return true;
         if (!(o instanceof Message)) return false;
         Message message = (Message) o;
-        return Objects.equals(getMessageId(), message.getMessageId()) && Objects.equals(getHeaders(), message.getHeaders()) && Objects.equals(getPayload(), message.getPayload()) && Objects.equals(getCorrelationId(), message.getCorrelationId()) && Objects.equals(getSchemaFormat(), message.getSchemaFormat()) && Objects.equals(getContentType(), message.getContentType()) && Objects.equals(getName(), message.getName()) && Objects.equals(getTitle(), message.getTitle()) && Objects.equals(getSummary(), message.getSummary()) && Objects.equals(getDescription(), message.getDescription()) && Objects.equals(getTags(), message.getTags()) && Objects.equals(getBindings(), message.getBindings()) && Objects.equals(getTraits(), message.getTraits());
+        return Objects.equals(messageId(), message.messageId()) && Objects.equals(headers(), message.headers()) && Objects.equals(payload(), message.payload()) && Objects.equals(correlationId(), message.correlationId()) && Objects.equals(schemaFormat(), message.schemaFormat()) && Objects.equals(contentType(), message.contentType()) && Objects.equals(name(), message.name()) && Objects.equals(title(), message.title()) && Objects.equals(summary(), message.summary()) && Objects.equals(description(), message.description()) && Objects.equals(tags(), message.tags()) && Objects.equals(bindings(), message.bindings()) && Objects.equals(traits(), message.traits());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getMessageId(), getHeaders(), getPayload(), getCorrelationId(), getSchemaFormat(), getContentType(), getName(), getTitle(), getSummary(), getDescription(), getTags(), getBindings(), getTraits());
+        return Objects.hash(messageId(), headers(), payload(), correlationId(), schemaFormat(), contentType(), name(), title(), summary(), description(), tags(), bindings(), traits());
     }
 }
